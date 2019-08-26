@@ -2,7 +2,7 @@
 
 `xxst` is an [xst](https://github.com/gnotclub/xst)  ([st](http://st.suckless.org)) fork that:
 
-- *:rage:i DOES NOT USE ALT+CTRL FOR USELESS COMMANDS :rage:*
+- DOES NOT USE ALT+CTRL FOR USELESS COMMANDS 
 
 and
 
