@@ -26,7 +26,6 @@ and
 Thanks to:
 
 - [gnotclub/xst](https://github.com/gnotclub/xst)
-
 - [suckless project](http://suckless.org/)
 - [dcat](https://github.com/dcat)
 - [Forkk](https://github.com/forkk)
