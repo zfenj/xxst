@@ -118,7 +118,7 @@ char *argv0;
 	XRESOURCE_LOAD_META(NAME)           \
 		DST = strtof(ret.addr, NULL);
 
-#define ISO14755CMD		"dmenu -w %lu -p codepoint: </dev/null"
+/* #define ISO14755CMD		"dmenu -w %lu -p codepoint: </dev/null" */
 
 #define IMSTYLE_ROOT "root"
 #define IMSTYLE_OVERTHESPOT "overthespot"
@@ -369,7 +369,7 @@ static void printscreen(const Arg *) ;
 static void toggleprinter(const Arg *);
 static void sendbreak(const Arg *);
 static void externalpipe(const Arg *);
-static void iso14755(const Arg *);
+/* static void iso14755(const Arg *); */
 
 /* Config.h for applying patches and the configuration. */
 #include "config.h"
@@ -2793,29 +2793,29 @@ tprinter(char *s, size_t len)
 	}
 }
 
-void
-iso14755(const Arg *arg)
-{
-	char cmd[sizeof(ISO14755CMD) + NUMMAXLEN(xw.win)];
-	FILE *p;
-	char *us, *e, codepoint[9], uc[UTF_SIZ];
-	unsigned long utf32;
+/* void */
+/* iso14755(const Arg *arg) */
+/* { */
+/* 	char cmd[sizeof(ISO14755CMD) + NUMMAXLEN(xw.win)]; */
+/* 	FILE *p; */
+/* 	char *us, *e, codepoint[9], uc[UTF_SIZ]; */
+/* 	unsigned long utf32; */
 
-	snprintf(cmd, sizeof(cmd), ISO14755CMD, xw.win);
-	if (!(p = popen(cmd, "r")))
-		return;
+/* 	snprintf(cmd, sizeof(cmd), ISO14755CMD, xw.win); */
+/* 	if (!(p = popen(cmd, "r"))) */
+/* 		return; */
 
-	us = fgets(codepoint, sizeof(codepoint), p);
-	pclose(p);
+/* 	us = fgets(codepoint, sizeof(codepoint), p); */
+/* 	pclose(p); */
 
-	if (!us || *us == '\0' || *us == '-' || strlen(us) > 7)
-		return;
-	if ((utf32 = strtoul(us, &e, 16)) == ULONG_MAX ||
-	    (*e != '\n' && *e != '\0'))
-		return;
+/* 	if (!us || *us == '\0' || *us == '-' || strlen(us) > 7) */
+/* 		return; */
+/* 	if ((utf32 = strtoul(us, &e, 16)) == ULONG_MAX || */
+/* 	    (*e != '\n' && *e != '\0')) */
+/* 		return; */
 
-	ttysend(uc, utf8encode(utf32, uc));
-}
+/* 	ttysend(uc, utf8encode(utf32, uc)); */
+/* } */
 
 void
 toggleprinter(const Arg *arg)
